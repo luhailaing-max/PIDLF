@@ -182,7 +182,7 @@ def main():
     patchsize = 30
     throd = 100
     site = 'lope'
-    method = 'v1_PIDLF'
+    method = 'PIDLF'
 
     # annfile = '/home/hllu/datasets'
 
@@ -303,18 +303,6 @@ def main():
         print("    Failed to load model dict  from %s ....."%checkpoint_path)
         return
 
-
-        # output = {
-        #     "idx":idx,
-        #     "x": x,
-        #     "dem": dem,
-        #     "coh": coh,
-        #     'patchsize': self.patchcol,
-        #     'h': self.h,
-        #     'w':self.w,
-        #     'pah':self.pdh,
-        #     'paw': self.paw,
-        # }
     temdata = dataset.__getitem__(0)
     realr = temdata['h']
     realc = temdata['w']
@@ -347,25 +335,10 @@ def main():
 
     out = img[:, 0:realr, 0:realc]
     out = torch.squeeze(out).numpy()
-    # out = out.astype('int16')
-   
-    # v1 = scene.inv('vv', name='v1', bl=0, hvdata = out, desc='v1 inversion...',  overwrite=True)
-
-    # scene.show('v1/hv', vmax=100, savefile=outpath+'v1.png')
-    # scene.geo('v1/hv', outpath+'v1.grd')
 
     scene.geo(out,outpath+site+'_'+method+'.tif',nodataval=-99,tr=0.000277777777777778,outformat='GTiff',resampling='pyresample')
 
-
-
-
     print("finished...............")
-
-
-
-
-
-
 
 
 
