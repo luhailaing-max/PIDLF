@@ -12,7 +12,9 @@ Dataset address (L-band lope site):
 ####
 Important package:
 ####
-  pytorch1.7
+  pytorch1.9
+####
+python 3.9.18
 ####
   kapok: for install it, please access to https://github.com/simard-landscape-lab/kapok/tree/main/docs
 ####
