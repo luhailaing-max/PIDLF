@@ -16,6 +16,8 @@ Important package:
 ####
 python 3.9.18
 ####
+gdal 3.0.2
+####
   kapok: for install it, please access to https://github.com/simard-landscape-lab/kapok/tree/main/docs
 ####
 Before running the train-lope-PIDLF.py code, afrisar-lope.py (containing the four baseline methods) should be executed to generate the pseudo labels.
