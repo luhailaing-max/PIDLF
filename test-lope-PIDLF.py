@@ -18,13 +18,15 @@ import time
 import random
 import torch.optim as optim
 from torch import  nn, einsum
-
+import math
 
 
 def getimgblock(arr, idx, partrow, partcol):
     band, r, c = arr.shape
-    rnum = r / partrow
-    cnum = c / partcol
+    # rnum = r / partrow
+    # cnum = c / partcol
+    rnum = math.ceil(r / partrow)
+    cnum = math.ceil(c / partcol)
     tem = idx
     idr = int(tem // cnum)
     idc = int(tem % cnum)
@@ -344,6 +346,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
